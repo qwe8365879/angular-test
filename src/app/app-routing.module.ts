@@ -1,4 +1,3 @@
-import { Album } from './class/album';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
