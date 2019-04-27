@@ -21,4 +21,8 @@ export class AlbumsService {
     return this.httpClient.get<Album[]>(url);
   }
 
+  getAlbum(id: number): Observable<Album> {
+    return this.httpClient.get<Album>(`${url}/${id}`);
+  }
+
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { PageHeaderService } from '../../services/page-header.service';
+
 import { Item } from '../../class/item';
 import { ItemsService } from '../../services/items.service';
 
@@ -10,14 +12,21 @@ import { ItemsService } from '../../services/items.service';
   styleUrls: ['./item-list.component.sass']
 })
 export class ItemListComponent implements OnInit {
+  title = 'Items';
   items: Item[];
 
   constructor(
-    private itemService: ItemsService
+    private itemService: ItemsService,
+    private pageHeaderService: PageHeaderService
   ) { }
 
   ngOnInit() {
+    this.setPageHeader();
     this.getItems();
+  }
+
+  setPageHeader(): void {
+    this.pageHeaderService.setHeader(this.title);
   }
 
   getItems(): void {

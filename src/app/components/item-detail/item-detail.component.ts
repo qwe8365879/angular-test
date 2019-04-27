@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
+import { PageHeaderService } from '../../services/page-header.service';
+
 import { Item } from '../../class/item';
 import { ItemsService } from '../../services/items.service';
-import { AlbumsService } from '../../services/albums.service';
 
 
 @Component({
@@ -14,17 +15,23 @@ import { AlbumsService } from '../../services/albums.service';
 })
 export class ItemDetailComponent implements OnInit {
 
-  @Input() item: Item;
+  item: Item;
+  title = 'Item Detail';
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
     private itemSerivce: ItemsService,
-    private albumService: AlbumsService
+    private pageHeaderService: PageHeaderService
   ) { }
 
   ngOnInit() {
+    this.setPageHeader();
     this.getItem();
+  }
+
+  setPageHeader(): void {
+    this.pageHeaderService.setHeader(this.title);
   }
 
   getItem(): void {

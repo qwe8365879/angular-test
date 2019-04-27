@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PageHeaderService } from './services/page-header.service';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
-  title = 'myApp1';
+export class AppComponent implements OnInit {
+  title = '';
+
+  constructor(private pageHeaderService: PageHeaderService) {}
+
+  ngOnInit() {
+    this.pageHeaderService.header.subscribe(header => {
+      this.title = header;
+    });
+  }
 }

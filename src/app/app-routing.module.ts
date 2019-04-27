@@ -29,7 +29,7 @@ const routes: Routes = [
     component: AlbumsComponent
   },
   {
-    path: 'album-detail',
+    path: 'album-detail/:id',
     component: AlbumDetailComponent
   }
 ];
