@@ -1,0 +1,17 @@
+<div class="item-list-content">
+  <h2 *ngFor="let item of items">
+    <button 
+    mat-raised-button 
+    color="primary"
+    matBadge="{{ item.id }}"
+    matBadgePosition="after" 
+    matBadgeColor="warn"
+    routerLink="/item-detail/{{ item.id }}"
+    >
+      {{ item.name | uppercase }}
+      
+    </button>
+  </h2>
+
+</div>
+

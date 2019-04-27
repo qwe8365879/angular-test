@@ -1,0 +1,30 @@
+<h1>Item Details</h1>
+
+<div *ngIf="item">
+  <h3>
+    {{ item.id }}  {{ item.name }}
+  </h3>
+  
+  <mat-form-field >
+    <input 
+    matInput
+    type="text" 
+    placeholder="Item name" 
+    [(ngModel)]="item.name"
+    >
+    <button 
+    mat-button 
+    matSuffix 
+    mat-icon-button 
+    aria-label="Clear" 
+    (click)="item.name=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<button 
+mat-button 
+(click)="goBack()">
+  Back
+</button>

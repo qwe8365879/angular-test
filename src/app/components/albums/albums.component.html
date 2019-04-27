@@ -1,0 +1,15 @@
+<div class="albums-content">
+  <h3>Albums</h3>
+  <div *ngFor="let album of albums | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+      {{ album.title }}
+  </div>
+  <ngb-pagination 
+  [collectionSize]="totalItems" 
+  [(page)]="page" 
+  [maxSize]="5" 
+  [rotate]="true" 
+  [boundaryLinks]="true"
+  >
+  </ngb-pagination>
+</div>
+
