@@ -16,6 +16,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { AlbumDetailComponent } from './components/album-detail/album-detail.component';
+import { RegisterComponent } from './components/register/register.component';
+import { PageTitleComponent } from './components/page-title/page-title.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AlbumDetailComponent } from './components/album-detail/album-detail.com
     CartComponent,
     ItemDetailComponent,
     AlbumsComponent,
-    AlbumDetailComponent
+    AlbumDetailComponent,
+    RegisterComponent,
+    PageTitleComponent
   ],
   imports: [
     BrowserModule,

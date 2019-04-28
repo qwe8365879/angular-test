@@ -1,3 +1,4 @@
+<app-page-title [title]="title"></app-page-title>
 <div class="albums-container">
   <div *ngFor="let album of albums | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
     <mat-card>

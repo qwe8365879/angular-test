@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PageHeaderService } from '../../services/page-header.service';
-
 import { Album } from '../../class/album';
 import { AlbumsService } from '../../services/albums.service';
 
@@ -19,17 +17,11 @@ export class AlbumsComponent implements OnInit {
   totalItems = 0;
 
   constructor(
-    private albumService: AlbumsService,
-    private pageHeaderService: PageHeaderService
+    private albumService: AlbumsService
   ) { }
 
   ngOnInit() {
-    this.setPageHeader();
     this.getAlbums();
-  }
-
-  setPageHeader(): void {
-    this.pageHeaderService.setHeader(this.title);
   }
 
   getAlbums(): void {

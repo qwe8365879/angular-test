@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-
-import { PageHeaderService } from '../../services/page-header.service';
 import { AlbumsService } from '../../services/albums.service';
 import { Album } from '../../class/album';
 
@@ -16,22 +14,16 @@ import { Album } from '../../class/album';
 })
 export class AlbumDetailComponent implements OnInit {
 
-  title = 'Album';
+  title = 'Album Detail';
   album: Album;
 
   constructor(
     private route: ActivatedRoute,
-    private albumsService: AlbumsService,
-    private pageHeaderService: PageHeaderService
+    private albumsService: AlbumsService
   ) { }
 
   ngOnInit() {
-    this.setPageHeader();
     this.getItem();
-  }
-
-  setPageHeader(): void {
-    this.pageHeaderService.setHeader(this.title);
   }
 
   getItem(): void {

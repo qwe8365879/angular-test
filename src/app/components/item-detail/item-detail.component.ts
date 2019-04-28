@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { PageHeaderService } from '../../services/page-header.service';
-
 import { Item } from '../../class/item';
 import { ItemsService } from '../../services/items.service';
 
@@ -21,17 +19,11 @@ export class ItemDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private itemSerivce: ItemsService,
-    private pageHeaderService: PageHeaderService
+    private itemSerivce: ItemsService
   ) { }
 
   ngOnInit() {
-    this.setPageHeader();
     this.getItem();
-  }
-
-  setPageHeader(): void {
-    this.pageHeaderService.setHeader(this.title);
   }
 
   getItem(): void {
